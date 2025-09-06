@@ -83,11 +83,11 @@ cd <repo-name>
 
 ### 2. Create virtual environment & install dependencies
 
-```bash
+
 python -m venv .venv
 source .venv/bin/activate        # On Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-```
+
 
 ### 3. Pull and serve Mistral model via Ollama
 
