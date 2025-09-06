@@ -111,6 +111,13 @@ python codes/evaluation.py \
   --gold data/evaluation_part.json \
   --out_dir data/outputs
 
+#### `results/figures/`
+
+Generated evaluation plots:
+
+- `distribution.(pdf|png)` — Shows the **stance label distribution** across the full dataset.
+- `f1_weighted.(pdf|png)` — Plots comparing **weighted F1-scores** across different classification approaches.
+- `regression_metrics_all_in_one.(pdf|png)` — Combined visualization of **regression metrics** (MAE, MSE, Pearson, Spearman) for stance prediction.
 
 
 
