@@ -163,9 +163,9 @@ python codes/evaluation.py \
 
 ### `data/outputs/figures/` — **Evaluation plots**
 
-- `distribution.png` / `.pdf` — Stance label distribution
-- `f1_weighted.png` / `.pdf` — Weighted F1-score comparison
-- `regression_metrics_all_in_one.png` / `.pdf` — Combined regression metrics
+- `distribution.png` — Stance label distribution
+- `f1_weighted.png` — Weighted F1-score comparison
+- `regression_metrics_all_in_one.png` — Combined regression metrics
 
 ---
 
