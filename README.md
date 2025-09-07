@@ -16,14 +16,15 @@ It supports two main methods:
 
 ### `codes/` — **Core scripts**
 
-- `model_train.py` — Fine-tunes SciBERT on stance-labeled abstracts
-- `zero_shot_approach.py` — Zero-shot prompting with Mistral-7B
-- `few_shot_approach_10_stances.py` — Few-shot prompting (10 examples)
-- `few_shot_approach_30_stances.py` — Few-shot prompting (30 examples)
-- `few_shot_approach_50_stances.py` — Few-shot prompting (50 examples)
-- `chain_of_stance_approach.py` — Chain-of-Stance prompting strategy
-- `make_predictions.py` — Helper script for batch predictions
-- `evaluation.py` — Evaluation script (F1, MAE, MSE, Pearson, Spearman)
+- `model_train.py` — Fine-tunes SciBERT on the stance-labeled abstracts (regression baseline).  
+- `zero_shot_approach.py` — Runs zero-shot prompting with Mistral-7B.  
+- `few_shot_approach_10_stances.py` — Few-shot prompting with 10 in-context examples.  
+- `few_shot_approach_30_stances.py` — Few-shot prompting with 30 in-context examples.  
+- `few_shot_approach_50_stances.py` — Few-shot prompting with 50 in-context examples.  
+- `chain_of_stance_approach.py` — Implements the Chain-of-Stance prompting strategy.  
+- `make_predictions.py` — Utility for generating batch predictions with a chosen method.  
+- `evaluation.py` — Computes evaluation metrics (F1, MAE, MSE, Pearson, Spearman) and produces plots.  
+
 
 ---
 
