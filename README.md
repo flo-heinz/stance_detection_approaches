@@ -50,25 +50,26 @@ Each abstract is stored in a separate `.json` file. Example format:
 
 #### `data/outputs/` — **Predictions and evaluation results**
 
-- `NLP-Predictions_mistral_zero_shot.json`
-- `NLP-Predictions_mistral_few_shot_10.json`
-- `NLP-Predictions_mistral_few_shot_30.json`
-- `NLP-Predictions_mistral_few_shot_50.json`
-- `NLP-Predictions_mistral_chain_of_stance.json`
-- `NLP-Predictions_SciBERT-regression.json`
-- `evaluation_results.txt` — Summary of evaluation metrics
-- `all_json_in_one.json` — Combined predictions
+- `NLP-Predictions_mistral_zero_shot.json` — Predictions from Mistral-7B using zero-shot prompting.  
+- `NLP-Predictions_mistral_few_shot_10.json` — Predictions from Mistral-7B with 10 in-context examples.  
+- `NLP-Predictions_mistral_few_shot_30.json` — Predictions from Mistral-7B with 30 in-context examples.  
+- `NLP-Predictions_mistral_few_shot_50.json` — Predictions from Mistral-7B with 50 in-context examples.  
+- `NLP-Predictions_mistral_chain_of_stance.json` — Predictions from Mistral-7B using the Chain-of-Stance reasoning approach.  
+- `NLP-Predictions_SciBERT-regression.json` — Predictions from the fine-tuned SciBERT regression baseline.  
+- `evaluation_results.txt` — Text summary of all evaluation metrics (classification + regression) for every method.  
+- `all_json_in_one.json` — Unified file merging gold labels and predictions from all methods, useful for joint comparison and plotting.  
 
 ---
 
 #### `data/outputs/figures/` — **Evaluation plots**
 
-- `accuracy_comparison.png`
-- `f1_macro_comparison.png`
-- `f1_micro_comparison.png`
-- `f1_weighted_comparison.png`
-- `per_class_f1_grouped.png`
-- `regression_metrics_all_in_one.png`
+- `accuracy_comparison.png` — Comparison of raw accuracy across methods.  
+- `f1_macro_comparison.png` — Macro-averaged F1 score (treats all classes equally).  
+- `f1_micro_comparison.png` — Micro-averaged F1 score (aggregates across all samples).  
+- `f1_weighted_comparison.png` — Weighted F1 score (accounts for class imbalance).  
+- `per_class_f1_grouped.png` — Per-class F1 performance, grouped for direct comparison of stance categories.  
+- `regression_metrics_all_in_one.png` — Combined bar chart of regression metrics (MAE, MSE, Pearson’s *r*, Spearman’s ρ).  
+
 
 ---
 
@@ -146,26 +147,7 @@ python codes/evaluation.py \
   --out_dir data/outputs
 ```
 
----
 
-## Output Files
-
-### `data/outputs/` — **Predictions and evaluation results**
-
-- `NLP-Predictions_mistral_zero_shot.json`
-- `NLP-Predictions_mistral_few_shot_10.json`
-- `NLP-Predictions_mistral_few_shot_30.json`
-- `NLP-Predictions_mistral_few_shot_50.json`
-- `NLP-Predictions_mistral_chain_of_stance.json`
-- `NLP-Predictions_SciBERT-regression.json`
-- `evaluation_results.txt` — Summary of evaluation metrics
-- `all_json_in_one.json` — Combined predictions
-
-### `data/outputs/figures/` — **Evaluation plots**
-
-- `distribution.png` — Stance label distribution
-- `f1_weighted.png` — Weighted F1-score comparison
-- `regression_metrics_all_in_one.png` — Combined regression metrics
 
 ---
 
