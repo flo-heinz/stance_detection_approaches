@@ -7,7 +7,7 @@ It supports two main methods:
 - **Supervised regression** using SciBERT
 - **Prompt-based inference** using Mistral-7B (via [Ollama](https://ollama.ai)) with:
   - Zero-shot prompting
-  - Few-shot prompting (10, 30, 50 examples)
+  - Few-shot prompting (3, 8, 15 examples)
   - Chain-of-Stance prompting
 
 ---
@@ -18,9 +18,9 @@ It supports two main methods:
 
 - `model_train.py` — Fine-tunes SciBERT on the stance-labeled abstracts (regression baseline).  
 - `zero_shot_approach.py` — Runs zero-shot prompting with Mistral-7B.  
-- `few_shot_approach_10_stances.py` — Few-shot prompting with 10 in-context examples.  
-- `few_shot_approach_30_stances.py` — Few-shot prompting with 30 in-context examples.  
-- `few_shot_approach_50_stances.py` — Few-shot prompting with 50 in-context examples.  
+- `few_shot_approach_10_stances.py` — Few-shot prompting with 3 in-context examples.  
+- `few_shot_approach_30_stances.py` — Few-shot prompting with 8 in-context examples.  
+- `few_shot_approach_50_stances.py` — Few-shot prompting with 15 in-context examples.  
 - `chain_of_stance_approach.py` — Implements the Chain-of-Stance prompting strategy.  
 - `make_predictions.py` — Utility for generating batch predictions with a chosen method.  
 - `evaluation.py` — Computes evaluation metrics (F1, MAE, MSE, Pearson, Spearman) and produces plots.  
@@ -52,9 +52,9 @@ Each abstract is stored in a separate `.json` file. Example format:
 #### `data/outputs/` — **Predictions and evaluation results**
 
 - `NLP-Predictions_mistral_zero_shot.json` — Predictions from Mistral-7B using zero-shot prompting.  
-- `NLP-Predictions_mistral_few_shot_10.json` — Predictions from Mistral-7B with 10 in-context examples.  
-- `NLP-Predictions_mistral_few_shot_30.json` — Predictions from Mistral-7B with 30 in-context examples.  
-- `NLP-Predictions_mistral_few_shot_50.json` — Predictions from Mistral-7B with 50 in-context examples.  
+- `NLP-Predictions_mistral_few_shot_10.json` — Predictions from Mistral-7B with 3 in-context examples.  
+- `NLP-Predictions_mistral_few_shot_30.json` — Predictions from Mistral-7B with 8 in-context examples.  
+- `NLP-Predictions_mistral_few_shot_50.json` — Predictions from Mistral-7B with 15 in-context examples.  
 - `NLP-Predictions_mistral_chain_of_stance.json` — Predictions from Mistral-7B using the Chain-of-Stance reasoning approach.  
 - `NLP-Predictions_SciBERT-regression.json` — Predictions from the fine-tuned SciBERT regression baseline.  
 - `evaluation_results.txt` — Text summary of all evaluation metrics (classification + regression) for every method.  
@@ -119,12 +119,12 @@ python codes/zero_shot_approach.py \
   --output data/outputs/NLP-Predictions_mistral_zero_shot.json
 ```
 
-### Few-Shot Prompting (example: 30 examples)
+### Few-Shot Prompting (example: 15 examples)
 
 ```bash
-python codes/few_shot_approach_30_stances.py \
+python codes/few_shot_approach_15_stances.py \
   --input data/evaluation_part.json \
-  --output data/outputs/NLP-Predictions_mistral_few_shot_30.json
+  --output data/outputs/NLP-Predictions_mistral_few_shot_15.json
 ```
 
 ### Chain-of-Stance Prompting
