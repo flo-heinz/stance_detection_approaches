@@ -18,9 +18,9 @@ It supports two main methods:
 
 - `model_train.py` — Fine-tunes SciBERT on the stance-labeled abstracts (regression baseline).  
 - `zero_shot_approach.py` — Runs zero-shot prompting with Mistral-7B.  
-- `few_shot_approach_10_stances.py` — Few-shot prompting with 3 in-context examples.  
-- `few_shot_approach_30_stances.py` — Few-shot prompting with 8 in-context examples.  
-- `few_shot_approach_50_stances.py` — Few-shot prompting with 15 in-context examples.  
+- `few_shot_approach_3_stances.py` — Few-shot prompting with 3 in-context examples.  
+- `few_shot_approach_8_stances.py` — Few-shot prompting with 8 in-context examples.  
+- `few_shot_approach_15_stances.py` — Few-shot prompting with 15 in-context examples.  
 - `chain_of_stance_approach.py` — Implements the Chain-of-Stance prompting strategy.  
 - `make_predictions.py` — Utility for generating batch predictions with a chosen method.  
 - `evaluation.py` — Computes evaluation metrics (F1, MAE, MSE, Pearson, Spearman) and produces plots.  
@@ -52,9 +52,9 @@ Each abstract is stored in a separate `.json` file. Example format:
 #### `data/outputs/` — **Predictions and evaluation results**
 
 - `NLP-Predictions_mistral_zero_shot.json` — Predictions from Mistral-7B using zero-shot prompting.  
-- `NLP-Predictions_mistral_few_shot_10.json` — Predictions from Mistral-7B with 3 in-context examples.  
-- `NLP-Predictions_mistral_few_shot_30.json` — Predictions from Mistral-7B with 8 in-context examples.  
-- `NLP-Predictions_mistral_few_shot_50.json` — Predictions from Mistral-7B with 15 in-context examples.  
+- `NLP-Predictions_mistral_few_shot_3.json` — Predictions from Mistral-7B with 3 in-context examples.  
+- `NLP-Predictions_mistral_few_shot_8.json` — Predictions from Mistral-7B with 8 in-context examples.  
+- `NLP-Predictions_mistral_few_shot_15.json` — Predictions from Mistral-7B with 15 in-context examples.  
 - `NLP-Predictions_mistral_chain_of_stance.json` — Predictions from Mistral-7B using the Chain-of-Stance reasoning approach.  
 - `NLP-Predictions_SciBERT-regression.json` — Predictions from the fine-tuned SciBERT regression baseline.  
 - `evaluation_results.txt` — Text summary of all evaluation metrics (classification + regression) for every method.  
